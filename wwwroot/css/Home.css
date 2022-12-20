@@ -1,0 +1,8 @@
+.categoryTitle {
+ color: white;
+ margin-top: 40%;
+}
+.Button:hover {
+ background: white !important;
+ color: black !important;
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mfhdYwGpYQjbmG8FHCZW8RbdWSIKVL7LIl6mL5/oSW8=",
+  "Hash": "RQGJMFlLxmf5Tc+vhygENVNo5kpWw7sonLgB4v/kDhs=",
   "Source": "MyWebApp",
   "BasePath": "_content/MyWebApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\jdam3\\MyWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyWebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\css\\Home.css",
+      "SourceId": "MyWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\",
+      "BasePath": "_content/MyWebApp",
+      "RelativePath": "css/Home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home.css"
     },
     {
       "Identity": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\css\\site.css",
