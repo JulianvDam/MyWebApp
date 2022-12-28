@@ -1,8 +1,29 @@
-.categoryTitle {
+.categoryTitle0 {
  color: white;
- margin-top: 40%;
+ margin-top: 100%;
+ margin-bottom: 100%;
+}
+
+.categoryTitle1 {
+ color: white;
+ margin-bottom: 100%;
 }
 .Button:hover {
  background: white !important;
  color: black !important;
+}
+
+.contentText {
+ font-size: 1.75vh;
+ font-weight: normal;
+}
+
+#AboutMe {
+ scroll-margin-top: 20vh;
+}
+#Portfolio {
+ scroll-margin-top: 20vh;
+}
+#Contact {
+ scroll-margin-top: 20vh;
 }

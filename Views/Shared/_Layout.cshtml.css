@@ -30,3 +30,24 @@ a {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.col {
+  background-color: #1b6ec2;
+}
+
+.homeicon {
+  color: white;
+  font-size: 3.5vh;
+}
+.homeicon:hover {
+  color: black;
+}
+
+.quote {
+  color: grey;
+}
+
+.nav-link.active {
+  background-color: white !important;
+  color: black !important;
+}

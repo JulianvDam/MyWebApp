@@ -31,3 +31,24 @@ a[b-qgspnya79y] {
 .box-shadow[b-qgspnya79y] {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.col[b-qgspnya79y] {
+  background-color: #1b6ec2;
+}
+
+.homeicon[b-qgspnya79y] {
+  color: white;
+  font-size: 3.5vh;
+}
+.homeicon:hover[b-qgspnya79y] {
+  color: black;
+}
+
+.quote[b-qgspnya79y] {
+  color: grey;
+}
+
+.nav-link.active[b-qgspnya79y] {
+  background-color: white !important;
+  color: black !important;
+}

@@ -9,32 +9,31 @@
     <link rel="stylesheet" href="~/MyWebApp.styles.css" asp-append-version="true" />
 </head>
 <body style="background-color:black">
-    <header>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
-            <i class="bi bi-house-door-fill" style="color:white;font-size:3.5vh;"></i>
-            <div class="container-fluid" style="color:white;">"If a man knows not which port he sails, no wind is favorable." - Seneca
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> 
-                    <ul class="navbar-nav flex-grow-1" style="margin-left:40%">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#AboutMe">About me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#Portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#Contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <nav id="websitenavbar" class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-house-door-fill homeicon"></i>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#AboutMe">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#Portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#Contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+            <div class="collapse navbar-collapse justify-content-end">
+                <h5 class="quote">"If a man knows not which port he sails, no wind is favorable." - Seneca</h5>
+            </div>
+        </div>
+    </nav>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

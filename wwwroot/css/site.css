@@ -17,13 +17,7 @@ body {
   position: relative;
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed; 
-  top: 0; 
-  width: 100%;
-}
+
 .navbar a {
   float: right;
   display: block;
@@ -35,7 +29,6 @@ body {
 
 /* Change background on mouse-over */
 .navbar a:hover {
-  background: #ddd;
+  background: grey;
   color: black !important;
 }
-
