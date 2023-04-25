@@ -17,23 +17,46 @@
                 <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" onclick="ToGithub()">Github</button>
         </div>
         <h2 id="AboutMe" class="categoryTitle0" >About me
-            <p class="contentText"><br> Hello, I’m Julian. <br> <br> I am currently a second year computer science student and I am working towards becoming a software developer. When I was little I already found technology interesting and I still do today. It's the future they say.</p>
+            <p class="contentText"><br> Hello, I’m Julian. <br> <br> As an ambitious computer science student, I am excited to apply my knowledge and skills in practice through an internship opportunity. My passion for technology and programming has driven me to excel in a variety of programming languages, including C# and JavaScript. I've also had the chance to work on projects that have honed my problem-solving skills and ability to work in a team environment. I am keen to bring my enthusiasm and drive to a dynamic organization where I can make a meaningful contribution. I am confident that my technical skills, strong work ethic and commitment to continuous learning make me an ideal candidate for an internship. If you are looking for a highly motivated computer science student with a passion for technology, I would love the opportunity to connect and discuss how I can contribute to your organization.</p>
+            <a class="item" href="#Portfolio">
+                <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 50px;">Continue</button>
+            </a>
         </h2>
         <h2 id="Portfolio" class="categoryTitle1">Portfolio
             <p class="contentText">This Website</p>
+            <a class="item" href="#Contact">
+                <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 50px;">Continue</button>
+            </a>
         </h2>
         <h2 id="Contact" class="categoryTitle1">Contact
             <p class="contentText">If you'd like to talk about a project you want help with or need an advice about, or want to send business inquiries, contact me at julianvdam@outlook.com. You can also contact me via LinkedIn.</p>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1"><h4>Name:</h4></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Pedro Pascal">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1"><h4>Email Address:</h4></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"><h4>Message:</h4></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
         </h2>
-        <p class="footercopyright" style="color:white"> © - Julian van Dam 2023</p>
+        <p class="footercopyright" style="color:white">Programmed and designed by me<br>Julian van Dam - © 2023</p>
     </div>
 </body>
 
 <script>
     function ToLinkedin() {
-        location.href = "https://www.linkedin.com/in/julian-van-dam/";
+        window.open("https://www.linkedin.com/in/julian-van-dam/");
     }
     function ToGithub() {
-        location.href = "https://github.com/JulianvDam";
+        window.open("https://github.com/JulianvDam");
     }
 </script>
