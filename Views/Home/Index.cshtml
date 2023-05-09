@@ -34,18 +34,18 @@
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="exampleFormControlInput1"><h4>Name:</h4></label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Pedro Pascal">
+                        <input type="name" class="form-control" id="FormInput1" placeholder="Pedro Pascal">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="exampleFormControlInput1"><h4>Email Address:</h4></label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="FormInput2" placeholder="name@example.com">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1"><h4>Message:</h4></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="FormInput3" rows="3"></textarea>
                 </div>
-                <button class="btn btn-primary" type="submit">Send Message</button>
+                <button class="btn btn-primary" type="submit" onclick="SendMessage()">Send Message</button>
             </form>
         </h2>
         <p class="footercopyright" style="color:white">Programmed and designed by me<br>Julian van Dam - © 2023</p>
@@ -53,6 +53,13 @@
 </body>
 
 <script>
+    function SendMessage() {
+        var name = $("#FormInput1").val();
+        alert(name);
+        //get this data to message model
+        var email = $("#FormInput2").val();
+        var message = $("#FormInput3").val();
+    }
     function ToLinkedin() {
         window.open("https://www.linkedin.com/in/julian-van-dam/");
     }
