@@ -6,22 +6,15 @@ namespace MyWebApp.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly IEmailSender _emailSender;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger, IEmailSender emailSender)
+    public HomeController(ILogger<HomeController> logger)
     {
-        this._emailSender = emailSender;
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
-        var name = "a";
-        var emailFrom = "julianvdam@outlook.com";
-        var message = "TEST";
-
-        //await _emailSender.SendEmail(name, emailFrom, message);
         return View();
     }
 

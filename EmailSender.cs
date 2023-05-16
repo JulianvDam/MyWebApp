@@ -4,7 +4,8 @@ using System.Net;
 public class EmailSender : IEmailSender {
  public Task SendEmail(string name, string email, string message) {
   
-  var emailTo = "cabewed166@asuflex.com";
+  //tempemail
+  var emailTo = "helixo6628@andorem.com";
   message += $"\n\nName: {name}\nEmail: {email}\n";
 
   var client = new SmtpClient("smtp.office365.com", 587) {
