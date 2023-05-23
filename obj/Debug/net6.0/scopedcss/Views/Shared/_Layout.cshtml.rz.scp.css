@@ -45,9 +45,16 @@ a[b-qgspnya79y] {
 
 #quote[b-qgspnya79y] {
   color: grey;
+  font-size: 1rem;
 }
 
 .nav-link.active[b-qgspnya79y] {
   background-color: white !important;
   color: black !important;
 }
+
+.text-light[b-qgspnya79y] {
+  height: 6vh;
+  width: 7vw;
+}
+
