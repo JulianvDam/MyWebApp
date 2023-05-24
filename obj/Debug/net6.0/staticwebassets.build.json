@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RQGJMFlLxmf5Tc+vhygENVNo5kpWw7sonLgB4v/kDhs=",
+  "Hash": "P10gYPOVELfoeW3JXv0A/L89+tmO9E3T7kfyNefutb0=",
   "Source": "MyWebApp",
   "BasePath": "_content/MyWebApp",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\Images\\website.png",
+      "SourceId": "MyWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\",
+      "BasePath": "_content/MyWebApp",
+      "RelativePath": "Images/website.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\website.png"
     },
     {
       "Identity": "C:\\Users\\jdam3\\MyWebApp\\wwwroot\\js\\site.js",
