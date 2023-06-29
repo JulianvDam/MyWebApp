@@ -10,6 +10,7 @@
         <img src="/Images/website.png" alt="Image of me" style="width: 40vh; height: 40vh;">
         <h1 class="Name" style="font-family:Tahoma; color:white; margin-top: 3%">Julian van Dam.</h1>
         <p class="Description" style="font-family:Tahoma; color: grey">Software Developer</p>
+        <p class="Description" style="font-family:Tahoma; color: grey">Looking for an internship</p>
         <a class="item" href="#AboutMe">
             <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 50px;">Continue</button>
         </a>
@@ -17,26 +18,34 @@
                 <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" onclick="ToLinkedin()">LinkedIn</button>
                 <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" onclick="ToGithub()">Github</button>
         </div>
-        <h2 id="AboutMe" class="categoryTitle0" >About me
-            <p class="contentText"><br> Hello, I’m Julian. <br> <br> As an ambitious computer science student, I am excited to apply my knowledge and skills in practice through an internship opportunity. My passion for technology and programming has driven me to excel in a variety of programming languages, including C# and JavaScript. I've also had the chance to work on projects that have honed my problem-solving skills and ability to work in a team environment. I am keen to bring my enthusiasm and drive to a dynamic organization where I can make a meaningful contribution. I am confident that my technical skills, strong work ethic and commitment to continuous learning make me an ideal candidate for an internship. If you are looking for a highly motivated computer science student with a passion for technology, I would love the opportunity to connect and discuss how I can contribute to your organization.</p>
+        <h2 id="AboutMe" class="categoryTitle0" >
+            <div class='console-container'><span id='AN_about_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
+            <p class="contentText"><br> Hello, I’m Julian. <br> <br> As an ambitious computer science student, I am excited to apply my knowledge and skills in practice through an internship opportunity. My passion for technology and programming has driven me to excel in a variety of programming languages, including C# and JavaScript. I've also had the chance to work on projects that have honed my problem-solving skills and ability to work in a team environment. I am keen to bring my  <b>enthusiasm and drive</b> to a dynamic organization where I can make a meaningful contribution. I am confident that my technical skills, strong work ethic and commitment to continuous learning make me an ideal candidate for an internship. If you are looking for a highly motivated computer science student with a passion for technology, I would love the opportunity to connect and discuss how I can contribute to your organization.</p>
+            <div class='console-container'><span id='AN_about_end'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <a class="item" href="#Portfolio">
                 <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 5vh; font-size:1rem">Continue</button>
             </a>
         </h2>
-        <h2 id="Portfolio" class="categoryTitle1">Portfolio
-        <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="/Images/fitplus.png" alt="Fitplus Image" style="width: 40vh; height: 40vh;" onclick="ToProject()">
-            <h5>FITNESS SYSTEM WITH SECURITY (PYTHON) - CO-DEVELOPER</h5>
-            <h6>Still private, ask for permission to access.</h6>
-            <img src="/Images/aws.png" alt="AWS Cloud-Developing Image" style="width: 40vh; height: 40vh;" onclick="ToProject()">
-            <h5>AWS CLOUD DEVELOPING (C#) - MAIN DEVELOPER</h5>
-            <h6>Still private, ask for permission to access.</h6>
-        </div>
+        <h2 id="Portfolio" class="categoryTitle1">
+            <div class='console-container'><span id='AN_portfolio_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
+            <div class="main_box">
+                <div class="img img1" id="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/" onclick="ToWebsite(id)">
+                    <p>2023</p>
+                </div>
+                <div class="img img2" id="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/" onclick="ToWebsite(id)">
+                    <p>2023</p>
+                </div>
+                <div class="img img3" id="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/" onclick="ToWebsite(id)">
+                    <p>2022</p>
+                </div>
+            </div>
+            <div class='console-container'><span id='AN_portfolio_end'></span><div class='console-underscore' id='console'>&#95;</div></div>
         <a class="item" href="#Contact">
                 <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 5vh; font-size:1rem">Continue</button>
             </a>
         </h2>
-        <h2 id="Contact" class="categoryTitle1">Contact
+        <h2 id="Contact" class="categoryTitle1">
+            <div class='console-container'><span id='AN_contact_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <p class="contentText">If you'd like to talk about a project you want help with or need an advice about, or want to send business inquiries, contact me at julianvdam@outlook.com. You can also contact me via LinkedIn or send me a message via this website.</p>
             <form>
                 <div class="form-row">
@@ -55,6 +64,7 @@
                 </div>
                 <button class="btn btn-primary" type="submit" onclick="SendMessage()">Send Message</button>
             </form>
+            <div class='console-container'><span id='AN_contact_end'></span><div class='console-underscore' id='console'>&#95;</div></div>
         </h2>
         <p class="footercopyright" style="color:white">Programmed and designed by me<br>Julian van Dam - © 2023</p>
     </div>
@@ -79,4 +89,68 @@
     function ToGithub() {
         window.open("https://github.com/JulianvDam");
     }
+    function ToWebsite(id) {
+        window.open(id);
+    }
+
+
+    
+    consoleText(['< About me', 'Nice to meet you'], 'AN_about_start', ['green', 'white'], 1000);
+    consoleText(['/>', ""], 'AN_about_end', ['green', 'black'], 3500);
+
+    consoleText(['< Portfolio', 'See my projects'], 'AN_portfolio_start', ['green', 'white'], 1000);
+    consoleText(['/>', ""], 'AN_portfolio_end', ['green', 'black'], 3281.25);
+
+    consoleText(['< Contact', 'See you later'], 'AN_contact_start', ['green', 'white'], 1000);
+    consoleText(['/>', ""], 'AN_contact_end', ['green', 'black'], 2843.75);
+
+
+    function consoleText(words, id, colors, interval) {
+        if (colors === undefined) colors = ['#fff'];
+        var visible = true;
+        var con = document.getElementById('console');
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id);
+        target.setAttribute('style', 'color:' + colors[0]);
+
+        window.setInterval(function() {
+            if (letterCount === 0 && waiting === false) {
+                waiting = true;
+                target.innerHTML = words[0].substring(0, letterCount);
+                window.setTimeout(function() {
+                    var usedColor = colors.shift();
+                    colors.push(usedColor);
+                    var usedWord = words.shift();
+                    words.push(usedWord);
+                    x = 1;
+                    target.setAttribute('style', 'color:' + colors[0]);
+                    letterCount += x;
+                    waiting = false;
+                }, interval);
+            } else if (letterCount === words[0].length + 1 && waiting === false) {
+                waiting = true;
+                window.setTimeout(function() {
+                    x = -1;
+                    letterCount += x;
+                    waiting = false;
+                }, interval);
+            } else if (waiting === false) {
+                target.innerHTML = words[0].substring(0, letterCount);
+                letterCount += x;
+            }
+        }, 200);
+
+        window.setInterval(function() {
+            if (visible === true) {
+                con.className = 'console-underscore hidden';
+                visible = false;
+            } else {
+                con.className = 'console-underscore';
+                visible = true;
+            }
+        }, 400);
+    }
+
 </script>
