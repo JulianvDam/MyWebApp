@@ -105,3 +105,17 @@ https://media.istockphoto.com/id/1317820316/photo/road-sign-work-in-progress.web
     color: rgb(56, 47, 47);
     transform: rotate(0deg);
 }
+
+@media (max-width: 1200px) {
+    .ProfileImage {
+        margin-top: 15%;
+    }
+    .Button {
+        font-size: 1vh;
+    }
+}
+@media (min-width: 1201px) {
+    .Button {
+        font-size: 1.8vh;
+    }
+}
