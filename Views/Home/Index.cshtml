@@ -20,8 +20,9 @@
                 style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 5vh;">Continue</button>
         </a>
         <div class="SmallerButtons" style="margin-top: 2%;">
-                <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" onclick="ToLinkedin()">LinkedIn</button>
-                <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" onclick="ToGithub()">Github</button>
+            <button class="Button"
+                style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="https://www.linkedin.com/in/julian-van-dam/">LinkedIn</button>
+            <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="https://github.com/JulianvDam">Github</button>
         </div>
         <h2 id="AboutMe" class="categoryTitle0" >
             <div class="console-container" style="margin-bottom: 10%;"><span id='AN_about_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
@@ -34,13 +35,13 @@
         <h2 id="Portfolio" class="categoryTitle1">
             <div class='console-container'><span id='AN_portfolio_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <div class="main_box">
-                <div class="img img1" id="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/" onclick="ToWebsite(id)">
+                <div class="img img1" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/">
                     <p>2023</p>
                 </div>
-                <div class="img img2" id="/Images/PerseusReach.png" onclick="ToWebsite(id)">
+                <div class="img img2" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="https://github.com/JulianvDam/PerseusReach">
                     <p>2023</p>
                 </div>
-                <div class="img img3" id="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/" onclick="ToWebsite(id)">
+                <div class="img img3" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="http://cloud-native-course.s3-website.eu-central-1.amazonaws.com/">
                     <p>2022</p>
                 </div>
             </div>
@@ -73,6 +74,28 @@
         </h2>
         <p class="footercopyright" style="color:white">Programmed and designed by me<br>Julian van Dam - © 2023</p>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="popupmodal" tabindex="-1" role="dialog"
+        aria-labelledby="popup" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">Are you sure to leave this website?</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary GoButton">Go</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
@@ -88,16 +111,27 @@
             message.SendEmail();
         }
     }
-    function ToLinkedin() {
-        window.open("https://www.linkedin.com/in/julian-van-dam/");
-    }
-    function ToGithub() {
-        window.open("https://github.com/JulianvDam");
-    }
-    function ToWebsite(id) {
-        window.open(id);
-    }
 
+
+    var Modal = document.getElementById('popupmodal')
+    Modal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        var recipient = button.getAttribute('data-bs-url')
+        // Update the modal's content.
+        var modalBody = Modal.querySelector('.modal-body')
+        modalBody.innerHTML = 'You are leaving to: <strong>' + recipient + "</strong>"
+
+        // Get the "Go" button element
+        var goButton = Modal.querySelector('.GoButton');
+        
+        // Add click event listener to the "Go" button
+        goButton.addEventListener('click', function() {
+            window.open(recipient); // Navigate to the recipient URL
+            $('#popupmodal').modal('hide');
+        });
+    })
 
     
     consoleText(['< About me', 'Nice to meet you'], 'AN_about_start', ['green', 'white'], 1000);
@@ -157,5 +191,4 @@
             }
         }, 400);
     }
-
 </script>
