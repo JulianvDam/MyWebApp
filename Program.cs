@@ -1,3 +1,6 @@
+using MyWebApp.Services;
+using MyWebApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

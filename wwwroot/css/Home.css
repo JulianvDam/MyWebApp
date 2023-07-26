@@ -28,13 +28,12 @@ body {
 
 .categoryTitle0 {
  color: white;
- margin-top: 50%;
+ margin-top: 30%;
 }
 
 .categoryTitle1 {
  color: white;
  margin-top: 30%;
- margin-bottom: 40%;
 }
 .Button:hover {
  background: white !important;
@@ -42,8 +41,12 @@ body {
 }
 
 .contentText {
- font-size: 1.75vh;
- font-weight: normal;
+    font-size: 1.75vh;
+    font-weight: normal;
+    border: 3vh solid #ccc;
+    border-radius: 10%;
+    padding: 2vh;
+    box-sizing: border-box;
 }
 
 #AboutMe {
@@ -105,6 +108,8 @@ https://media.istockphoto.com/id/1317820316/photo/road-sign-work-in-progress.web
     color: rgb(56, 47, 47);
     transform: rotate(0deg);
 }
+
+
 
 @media (max-width: 1200px) {
     .ProfileImage {

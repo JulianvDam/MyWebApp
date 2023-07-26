@@ -14,7 +14,6 @@
         <img src="/Images/website.png" alt="Image of me" style="width: 40vh; height: 40vh;" class="ProfileImage">
         <h1 class="Name" style="font-family:Tahoma; color:white; margin-top: 3%">Julian van Dam.</h1>
         <p class="Description" style="font-family:Tahoma; color: grey">Software Developer</p>
-        <p class="Description" style="font-family:Tahoma; color: grey">Looking for an internship</p>
         <a class="item" href="#AboutMe">
             <button class="Button"
                 style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:10px; margin-top: 5%; width: 15%; height: 5vh;">Continue</button>
@@ -25,7 +24,7 @@
             <button class="Button" style="font-family:Tahoma; border-style:solid; color:white; background-color:black; border-width:4px; border-color:white; border-radius:2px;" data-bs-toggle="modal" data-bs-target="#popupmodal" data-bs-url="https://github.com/JulianvDam">Github</button>
         </div>
         <h2 id="AboutMe" class="categoryTitle0" >
-            <div class="console-container" style="margin-bottom: 10%;"><span id='AN_about_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
+            <div class="console-container" ><span id='AN_about_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <p class="contentText"><br> Hello, I’m Julian. <br> <br> As an ambitious computer science student, I am excited to apply my knowledge and skills in practice through an internship opportunity. My passion for technology and programming has driven me to excel in a variety of programming languages, including C# and JavaScript. I've also had the chance to work on projects that have honed my problem-solving skills and ability to work in a team environment. I am keen to bring my  <b>enthusiasm and drive</b> to a dynamic organization where I can make a meaningful contribution. I am confident that my technical skills, strong work ethic and commitment to continuous learning make me an ideal candidate for an internship. If you are looking for a highly motivated computer science student with a passion for technology, I would love the opportunity to connect and discuss how I can contribute to your organization.</p>
             <div class='console-container'><span id='AN_about_end'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <a class="item" href="#Portfolio">
@@ -53,7 +52,7 @@
         <h2 id="Contact" class="categoryTitle1">
             <div class='console-container'><span id='AN_contact_start'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <p class="contentText">If you'd like to talk about a project you want help with or need an advice about, or want to send business inquiries, contact me at julianvdam@outlook.com. You can also contact me via LinkedIn or send me a message via this website.</p>
-            <form>
+            <form id="ContactForm">
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="FormInput1"><h4>Name:</h4></label>
@@ -61,16 +60,16 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="FormInput2"><h4>Email Address:</h4></label>
-                        <input type="text" class="form-control" id="FormInput2" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="FormInput2" placeholder="email@address.com">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="FormInput3"><h4>Message:</h4></label>
                     <textarea class="form-control" id="FormInput3" rows="3"></textarea>
                 </div>
-                <button class="btn btn-primary" type="submit" onclick="SendMessage()">Send Message</button>
+                <button class="btn btn-primary" type="submit">Send Message</button>
             </form>
-            <div class='console-container'><span id='AN_contact_end'></span><div class='console-underscore' id='console'>&#95;</div></div>
+            <div class='console-container' style="margin-top:10%"><span id='AN_contact_end'></span><div class='contact_end' id='console'>&#95;</div></div>
         </h2>
         <p class="footercopyright" style="color:white">Programmed and designed by me<br>Julian van Dam - © 2023</p>
     </div>
@@ -100,16 +99,32 @@
 
 <script>
     function SendMessage() {
-        
+        event.preventDefault();
         var name = $("#FormInput1").val();
         var email = $("#FormInput2").val();
         var message = $("#FormInput3").val();
 
-        @{
-            
-            Message message = new Message("Naam", "j.dam39@outlook.com", "MESSAGE");
-            message.SendEmail();
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all required fields.');
+            return;
         }
+
+        $.ajax({
+            type: "POST",
+            url: "/Home/SendEmail",
+            data: {
+                name: name,
+                email: email,
+                message: message
+            },
+            success: function (data) {
+                console.log(data.message);
+            },
+            error: function (error) {
+                console.log(error.message);
+            }
+        });
+        location.reload();
     }
 
 
@@ -133,17 +148,57 @@
         });
     })
 
+    function isElementInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function ScrolledTo(targetId, callback) {
+        var targetElement = document.getElementById(targetId);
+        if (isElementInViewport(targetElement)) {
+            callback(targetId);
+        }
+    }
+
+    function onScroll() {
+        ScrolledTo('AN_about_start', function(targetId) {
+            if (!targetElementState[targetId]) {
+            consoleText(['< Nice to meet you'], targetId, ['blue'], 9999999);
+            consoleText(['/>'], 'AN_about_end', ['blue'], 9999999);
+            targetElementState[targetId] = true;
+            }
+        });
+
+        ScrolledTo('AN_portfolio_start', function(targetId) {
+            if (!targetElementState[targetId]) {
+            consoleText(['< Portfolio'], targetId, ['blue'], 9999999);
+            consoleText(['/>'], 'AN_portfolio_end', ['blue'], 9999999);
+            targetElementState[targetId] = true;
+            }
+        });
+
+        ScrolledTo('AN_contact_start', function(targetId) {
+            if (!targetElementState[targetId]) {
+            consoleText(['< Contact'], targetId, ['blue'], 9999999);
+            consoleText(['/>'], 'AN_contact_end', ['blue'], 9999999);
+            targetElementState[targetId] = true;
+            }
+        });
+    }
+
+    var targetElementState = {
+        'AN_about_start': false,
+        'AN_portfolio_start': false,
+        'AN_contact_start': false
+    };
+
+
     
-    consoleText(['< About me', 'Nice to meet you'], 'AN_about_start', ['green', 'white'], 1000);
-    consoleText(['/>', ""], 'AN_about_end', ['green', 'black'], 3500);
-
-    consoleText(['< Portfolio', 'See my projects'], 'AN_portfolio_start', ['green', 'white'], 1000);
-    consoleText(['/>', ""], 'AN_portfolio_end', ['green', 'black'], 3281.25);
-
-    consoleText(['< Contact', 'See you later'], 'AN_contact_start', ['green', 'white'], 1000);
-    consoleText(['/>', ""], 'AN_contact_end', ['green', 'black'], 2843.75);
-
-
     function consoleText(words, id, colors, interval) {
         if (colors === undefined) colors = ['#fff'];
         var visible = true;
@@ -181,6 +236,7 @@
             }
         }, 200);
 
+
         window.setInterval(function() {
             if (visible === true) {
                 con.className = 'console-underscore hidden';
@@ -191,4 +247,7 @@
             }
         }, 400);
     }
+    window.addEventListener('scroll', onScroll);
+    var form = document.getElementById('ContactForm');
+    form.addEventListener('submit', SendMessage);
 </script>

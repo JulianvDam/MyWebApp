@@ -28,4 +28,20 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    [HttpPost]
+    public JsonResult SendEmail(string name, string email, string message)
+    {
+        try
+        {
+            Message mailMessage = new Message(name, email, message);
+            mailMessage.SendEmail();
+
+            return Json(new { status = "success", message = "Form submitted successfully!" });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { status = "error", message = ex.Message });
+        }
+    }
 }
