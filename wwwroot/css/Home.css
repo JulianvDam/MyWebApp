@@ -34,6 +34,7 @@ body {
 .categoryTitle1 {
  color: white;
  margin-top: 30%;
+ margin-bottom: 2%;
 }
 .Button:hover {
  background: white !important;
